@@ -3,6 +3,8 @@ using Abp.AspNetCore.Mvc.Authorization;
 using AbpCompanyName.AbpProjectName.Controllers;
 using System.Threading.Tasks;
 using AbpCompanyName.AbpProjectName.foo;
+using System.Collections.Generic;
+using AbpCompanyName.AbpProjectName.Web.Models;
 
 namespace AbpCompanyName.AbpProjectName.Web.Controllers
 {
@@ -30,14 +32,9 @@ namespace AbpCompanyName.AbpProjectName.Web.Controllers
 
             var response = await _fooAppService.GetFoosAsync(request);
 
-            // var holdingsModel = this.AggregatePortfolioHoldings(ObjectMapper.Map<List<HoldingModel>>(response.Holdings));
+            var model = ObjectMapper.Map<List<FooViewModel>>(response.FooItems);
 
-            // return PartialView("~/Views/Clients/Tab/SubTabs/_PortfolioHoldings.cshtml", holdingsModel);
-
-            return null;
-
+            return PartialView("~/Views/Foo/FooList.cshtml", model);
         }
-
-
     }
 }

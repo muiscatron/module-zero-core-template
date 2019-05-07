@@ -3,10 +3,11 @@ using Microsoft.Extensions.Configuration;
 using Abp.Modules;
 using Abp.Reflection.Extensions;
 using AbpCompanyName.AbpProjectName.Configuration;
+using Abp.AutoMapper;
 
 namespace AbpCompanyName.AbpProjectName.Web.Startup
 {
-    [DependsOn(typeof(AbpProjectNameWebCoreModule))]
+    [DependsOn(typeof(AbpProjectNameWebCoreModule), typeof(AbpAutoMapperModule))]
     public class AbpProjectNameWebMvcModule : AbpModule
     {
         private readonly IHostingEnvironment _env;

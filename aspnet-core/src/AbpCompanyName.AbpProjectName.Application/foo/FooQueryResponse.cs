@@ -9,6 +9,6 @@ namespace AbpCompanyName.AbpProjectName.foo
 {
     public class FooQueryResponse
     {
-        public List<FooItemDto> MyProperty { get; set; }
+        public List<FooItemDto> FooItems { get; set; }
     }
 }

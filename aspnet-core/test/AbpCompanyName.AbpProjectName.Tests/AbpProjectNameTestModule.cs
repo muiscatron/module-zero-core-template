@@ -17,7 +17,8 @@ namespace AbpCompanyName.AbpProjectName.Tests
     [DependsOn(
         typeof(AbpProjectNameApplicationModule),
         typeof(AbpProjectNameEntityFrameworkModule),
-        typeof(AbpTestBaseModule)
+        typeof(AbpTestBaseModule),
+        typeof(AbpAutoMapperModule)
         )]
     public class AbpProjectNameTestModule : AbpModule
     {

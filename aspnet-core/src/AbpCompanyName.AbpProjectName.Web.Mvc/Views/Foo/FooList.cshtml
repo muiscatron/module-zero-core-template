@@ -1,4 +1,38 @@
 ﻿@model List<AbpCompanyName.AbpProjectName.Web.Models.FooViewModel>
 
 <div class="panel-body">
+
+    <table class="table table-hover animated fadeInRight" data-page-size="10" data-filter="#filter">
+        <thead>
+            <tr>
+                <th>Foo</th>
+                <th>Name</th>
+                <th>Nickname</th>
+                <th>Sedol</th>
+                <th>Account Wrapper</th>
+                <th>Trade Date</th>
+                <th>Settled Date</th>
+                <th>Transaction Type</th>
+                <th>Units</th>
+                <th>Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var foo in Model)
+            {
+                <tr>
+                    <td>@foo.FooNickname</td>
+                    <td>@foo.FooName</td>
+                    <td>@foo.FooDensity</td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="9">
+                    <ul class="pagination float-right"></ul>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
 </div>
