@@ -18,23 +18,21 @@ namespace AbpCompanyName.AbpProjectName.Web.Controllers
             _fooAppService = fooAppService;
         }
 
-        public ActionResult Index()
+        public async Task<ActionResult> Index()
         {
-            return View();
-        }
 
-        public async Task<ActionResult> FooQuery(string fooTypes)
-        {
             var request = new FooQueryRequest
             {
-                FooTypes = fooTypes
+                FooTypes = string.Empty
             };
 
             var response = await _fooAppService.GetFoosAsync(request);
 
             var model = ObjectMapper.Map<List<FooViewModel>>(response.FooItems);
 
-            return PartialView("~/Views/Foo/FooList.cshtml", model);
+
+            return View(model);
         }
+
     }
 }

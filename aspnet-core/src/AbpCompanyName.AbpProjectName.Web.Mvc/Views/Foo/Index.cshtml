@@ -1,23 +1,36 @@
-﻿@using AbpCompanyName.AbpProjectName.Web.Startup
+﻿@model List<AbpCompanyName.AbpProjectName.Web.Models.FooViewModel>
+@using AbpCompanyName.AbpProjectName.Web.Startup
 @{
     ViewBag.CurrentPageName = PageNames.Foos; // The menu item will be active for this page.
 }
 
 <div class="row clearfix">
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        <div class="card">
-            <div class="header">
-                <h2>
-                    Foo
-                </h2>
-            </div>
-            <div class="body">
-                <p>
-                    Some content
-                </p>
-                
+    <div class="panel-body">
 
-            </div>
-        </div>
-    </div>
-</div>
+        <table class="table table-hover animated fadeInRight" data-page-size="10" data-filter="#filter">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Nickname</th>
+                    <th>Density</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var foo in Model)
+                {
+                    <tr>
+                        <td>@foo.FooNickname</td>
+                        <td>@foo.FooName</td>
+                        <td>@foo.FooDensity</td>
+                    </tr>
+                }
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="9">
+                        <ul class="pagination float-right"></ul>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </div></div>

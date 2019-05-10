@@ -22,7 +22,7 @@ namespace AbpCompanyName.AbpProjectName.Tests.foo
 
             var fooController = new FooController(mockFooService.Object);
 
-            var result = await fooController.FooQuery("any");
+            var result = await fooController.Index();
 
             result.ShouldNotBeNull();
 
